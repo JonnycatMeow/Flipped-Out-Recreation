@@ -1,0 +1,25 @@
+{
+	"storyName": "a",
+	"hideFreeplay": false,
+	"weekBackground": "a",
+	"weekBefore": "",
+	"startUnlocked": true,
+	"weekCharacters": [
+		"",
+		"",
+		""
+	],
+	"songs": [
+		[
+			"fliphardy",
+			"flippy",
+			[
+				255,
+				255,
+				255
+			]
+		]
+	],
+	"hideStoryMode": true,
+	"weekName": ""
+}
