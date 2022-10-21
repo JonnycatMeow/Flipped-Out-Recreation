@@ -114,9 +114,9 @@ class MainMenuState extends MusicBeatState
 
 		//for (i in 0...optionShit.length)
 
-	        // Story Mode
+	        //SM
 			var offset:Float = 100 - (Math.max(optionShit.length, 4) - 4) * 50;
-			var menuItem:FlxSprite = new FlxSprite(105, 600);
+			var menuItem:FlxSprite = new FlxSprite(75, 600);
 			menuItem.scale.x = scale;
 			menuItem.scale.y = scale;
 			menuItem.frames = Paths.getSparrowAtlas('mainmenu/menu_' + optionShit[0]);
@@ -125,21 +125,19 @@ class MainMenuState extends MusicBeatState
 			menuItem.animation.play('idle');
 			menuItem.ID = 0;
 			menuItem.setGraphicSize(Std.int(menuItem.width * 0.42));
-			// menuItem.screenCenter(X);
 			menuItems.add(menuItem);
 			var scr:Float = (optionShit.length - 4) * 0.1;
 			if(optionShit.length < 6) scr = 0;
 			menuItem.scrollFactor.set(0, scr);
 			menuItem.antialiasing = ClientPrefs.globalAntialiasing;
-			//menuItem.setGraphicSize(Std.int(menuItem.width * 0.58));
 			menuItem.updateHitbox();
 
 
 
 
-			// FreePlay Mode
+			//Freeplay
 			var offset:Float = 100 - (Math.max(optionShit.length, 4) - 4) * 50;
-			var menuItem:FlxSprite = new FlxSprite(455, 600);
+			var menuItem:FlxSprite = new FlxSprite(425, 600);
 			menuItem.scale.x = scale;
 			menuItem.scale.y = scale;
 			menuItem.frames = Paths.getSparrowAtlas('mainmenu/menu_' + optionShit[1]);
@@ -148,21 +146,19 @@ class MainMenuState extends MusicBeatState
 			menuItem.animation.play('idle');
 			menuItem.ID = 1;
 			menuItem.setGraphicSize(Std.int(menuItem.width * 0.42));
-			// menuItem.screenCenter(X);
 			menuItems.add(menuItem);
 			var scr:Float = (optionShit.length - 4) * 0.1;
 			if(optionShit.length < 6) scr = 1;
 			menuItem.scrollFactor.set(1, scr);
 			menuItem.antialiasing = ClientPrefs.globalAntialiasing;
-			//menuItem.setGraphicSize(Std.int(menuItem.width * 0.58));
 			menuItem.updateHitbox();
 
 
 
 
-			// Options
+			//Options
 			var offset:Float = 100 - (Math.max(optionShit.length, 4) - 4) * 50;
-			var menuItem:FlxSprite = new FlxSprite(1020, 600);
+			var menuItem:FlxSprite = new FlxSprite(990, 600);
 			menuItem.scale.x = scale;
 			menuItem.scale.y = scale;
 			menuItem.frames = Paths.getSparrowAtlas('mainmenu/menu_' + optionShit[3]);
@@ -171,13 +167,11 @@ class MainMenuState extends MusicBeatState
 			menuItem.animation.play('idle');
 			menuItem.ID = 3;
 			menuItem.setGraphicSize(Std.int(menuItem.width * 0.42));
-			// menuItem.screenCenter(X);
 			menuItems.add(menuItem);
 			var scr:Float = (optionShit.length - 4) * 0.1;
 			if(optionShit.length < 6) scr = 3;
 			menuItem.scrollFactor.set(3, scr);
 			menuItem.antialiasing = ClientPrefs.globalAntialiasing;
-			//menuItem.setGraphicSize(Std.int(menuItem.width * 0.58));
 			menuItem.updateHitbox();
 
 		//FlxG.camera.follow(camFollowPos, null, 1);
