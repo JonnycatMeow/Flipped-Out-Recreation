@@ -159,29 +159,6 @@ class MainMenuState extends MusicBeatState
 
 
 
-
-			// Credits
-			var offset:Float = 100 - (Math.max(optionShit.length, 4) - 4) * 50;
-			var menuItem:FlxSprite = new FlxSprite(749, 600);
-			menuItem.scale.x = scale;
-			menuItem.scale.y = scale;
-			menuItem.frames = Paths.getSparrowAtlas('mainmenu/menu_' + optionShit[2]);
-			menuItem.animation.addByPrefix('idle', optionShit[2] + " basic", 24);
-			menuItem.animation.addByPrefix('selected', optionShit[2] + " white", 24);
-			menuItem.animation.play('idle');
-			menuItem.ID = 2;
-			menuItem.setGraphicSize(Std.int(menuItem.width * 0.42));
-			// menuItem.screenCenter(X);
-			menuItems.add(menuItem);
-			var scr:Float = (optionShit.length - 4) * 0.1;
-			if(optionShit.length < 6) scr = 2;
-			menuItem.scrollFactor.set(2, scr);
-			menuItem.antialiasing = ClientPrefs.globalAntialiasing;
-			//menuItem.setGraphicSize(Std.int(menuItem.width * 0.58));
-			menuItem.updateHitbox();
-
-
-
 			// Options
 			var offset:Float = 100 - (Math.max(optionShit.length, 4) - 4) * 50;
 			var menuItem:FlxSprite = new FlxSprite(1020, 600);
