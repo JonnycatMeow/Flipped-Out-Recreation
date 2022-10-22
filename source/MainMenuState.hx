@@ -178,7 +178,7 @@ class MainMenuState extends MusicBeatState
 		//	menuItem.setGraphicSize(Std.int(menuItem.width * 0.42));
 			// menuItem.screenCenter(X);
 		//	menuItems.add(menuItem);
-			var scr:Float = (optionShit.length - 4) * 0.1;
+		//	var scr:Float = (optionShit.length - 4) * 0.1;
 		//	if(optionShit.length < 6) scr = 2;
 		//	menuItem.scrollFactor.set(2, scr);
 		//	menuItem.antialiasing = ClientPrefs.globalAntialiasing;
