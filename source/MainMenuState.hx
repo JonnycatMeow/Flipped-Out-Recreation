@@ -24,8 +24,9 @@ import flixel.input.keyboard.FlxKey;
 using StringTools;
 
 class MainMenuState extends MusicBeatState
-{	
-	public static var psychEngineVersion:String = '';
+{
+	public static var flipSelected:Int = 0;	
+	public static var psychEngineVersion:String = ''; //This is also used for Discord RPC
 	public static var curSelected:Int = 0;
 
 	var menuItems:FlxTypedGroup<FlxSprite>;
@@ -34,7 +35,11 @@ class MainMenuState extends MusicBeatState
 	
 	var optionShit:Array<String> = [
 		'freeplay',
-		'story_mode',
+		'story_mode'
+		//#if MODS_ALLOWED 'mods', #end
+		//#if ACHIEVEMENTS_ALLOWED 'awards', #end
+		//'credits',
+		//#if !switch 'donate', #end
 		'options'
 	];
 
@@ -114,7 +119,7 @@ class MainMenuState extends MusicBeatState
 
 		//for (i in 0...optionShit.length)
 
-	        //SM
+	        // Story Mode
 			var offset:Float = 100 - (Math.max(optionShit.length, 4) - 4) * 50;
 			var menuItem:FlxSprite = new FlxSprite(75, 600);
 			menuItem.scale.x = scale;
@@ -125,17 +130,19 @@ class MainMenuState extends MusicBeatState
 			menuItem.animation.play('idle');
 			menuItem.ID = 0;
 			menuItem.setGraphicSize(Std.int(menuItem.width * 0.42));
+			// menuItem.screenCenter(X);
 			menuItems.add(menuItem);
 			var scr:Float = (optionShit.length - 4) * 0.1;
 			if(optionShit.length < 6) scr = 0;
 			menuItem.scrollFactor.set(0, scr);
 			menuItem.antialiasing = ClientPrefs.globalAntialiasing;
+			//menuItem.setGraphicSize(Std.int(menuItem.width * 0.58));
 			menuItem.updateHitbox();
 
 
 
 
-			//Freeplay
+			// FreePlay Mode
 			var offset:Float = 100 - (Math.max(optionShit.length, 4) - 4) * 50;
 			var menuItem:FlxSprite = new FlxSprite(425, 600);
 			menuItem.scale.x = scale;
@@ -146,17 +153,41 @@ class MainMenuState extends MusicBeatState
 			menuItem.animation.play('idle');
 			menuItem.ID = 1;
 			menuItem.setGraphicSize(Std.int(menuItem.width * 0.42));
+			// menuItem.screenCenter(X);
 			menuItems.add(menuItem);
 			var scr:Float = (optionShit.length - 4) * 0.1;
 			if(optionShit.length < 6) scr = 1;
 			menuItem.scrollFactor.set(1, scr);
 			menuItem.antialiasing = ClientPrefs.globalAntialiasing;
+			//menuItem.setGraphicSize(Std.int(menuItem.width * 0.58));
 			menuItem.updateHitbox();
 
 
 
 
-			//Options
+			// Credits
+		//	var offset:Float = 100 - (Math.max(optionShit.length, 4) - 4) * 50;
+		//	var menuItem:FlxSprite = new FlxSprite(749, 600);
+		//	menuItem.scale.x = scale;
+		//	menuItem.scale.y = scale;
+		//	menuItem.frames = Paths.getSparrowAtlas('mainmenu/menu_' + optionShit[2]);
+		//	menuItem.animation.addByPrefix('idle', optionShit[2] + " basic", 24);
+		//	menuItem.animation.addByPrefix('selected', optionShit[2] + " white", 24);
+		//	menuItem.animation.play('idle');
+		//	menuItem.ID = 2;
+		//	menuItem.setGraphicSize(Std.int(menuItem.width * 0.42));
+			// menuItem.screenCenter(X);
+		//	menuItems.add(menuItem);
+			var scr:Float = (optionShit.length - 4) * 0.1;
+		//	if(optionShit.length < 6) scr = 2;
+		//	menuItem.scrollFactor.set(2, scr);
+		//	menuItem.antialiasing = ClientPrefs.globalAntialiasing;
+			//menuItem.setGraphicSize(Std.int(menuItem.width * 0.58));
+		//	menuItem.updateHitbox();
+
+
+
+			// Options
 			var offset:Float = 100 - (Math.max(optionShit.length, 4) - 4) * 50;
 			var menuItem:FlxSprite = new FlxSprite(990, 600);
 			menuItem.scale.x = scale;
@@ -167,11 +198,13 @@ class MainMenuState extends MusicBeatState
 			menuItem.animation.play('idle');
 			menuItem.ID = 3;
 			menuItem.setGraphicSize(Std.int(menuItem.width * 0.42));
+			// menuItem.screenCenter(X);
 			menuItems.add(menuItem);
 			var scr:Float = (optionShit.length - 4) * 0.1;
 			if(optionShit.length < 6) scr = 3;
 			menuItem.scrollFactor.set(3, scr);
 			menuItem.antialiasing = ClientPrefs.globalAntialiasing;
+			//menuItem.setGraphicSize(Std.int(menuItem.width * 0.58));
 			menuItem.updateHitbox();
 
 		//FlxG.camera.follow(camFollowPos, null, 1);
@@ -180,7 +213,7 @@ class MainMenuState extends MusicBeatState
 		versionShit.scrollFactor.set();
 		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(versionShit);
-		var versionShit:FlxText = new FlxText(12, FlxG.height - 24, 0, "Flippy Flipped Out v" + Application.current.meta.get('version'), 12);
+		var versionShit:FlxText = new FlxText(12, FlxG.height - 24, 0, "Flipped Out v" + Application.current.meta.get('version'), 12);
 		versionShit.scrollFactor.set();
 		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(versionShit);
